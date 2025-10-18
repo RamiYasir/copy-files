@@ -2,15 +2,12 @@ import hashlib
 
 BUFFER_SIZE = 1024
 
-# public
 def hash_file(filepath):
-    print(f"hashing {filepath}")
     with filepath.open(mode='rb') as file:
         hasher = hashlib.sha1()
         update_hash(hasher, file)
         return hasher.hexdigest()
 
-# private
 def update_hash(hasher, file):
     end_of_data = False
 

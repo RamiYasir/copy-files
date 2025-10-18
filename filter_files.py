@@ -11,7 +11,9 @@ def filter_by_extension(source_dict, file_extension):
     files_to_copy = source_dict.copy()
     if file_extension is not None:
         for key in source_dict.keys():
-            if key.endswith(file_extension):
+            if key.suffix.endswith(file_extension):
+                continue
+            else:
                 del files_to_copy[key]
 
     return files_to_copy

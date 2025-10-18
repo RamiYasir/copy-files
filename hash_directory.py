@@ -1,5 +1,5 @@
 import pathlib
-from file_hasher import hash_file
+from hash_files import hash_file
 
 SKIP_DIRS = ["temp", "temporary_files", "logs", ".idea", ".venv"]
 
