@@ -1,6 +1,7 @@
 import pathlib
 import sys
 from HashFilesInDirectory import hash_files_in_directory
+from CheckForDuplicates import delete_duplicates
 
 
 def main():
@@ -18,15 +19,6 @@ def main():
 def print_items(dict):
     for item in dict.keys():
         print(f"Item: {item}, hash: {dict[item]}")
-
-
-def delete_duplicates(source_dict, target_dict):
-    files_to_copy = source_dict.copy()
-    for key, value in source_dict.items():
-        if value in target_dict.values():
-            del files_to_copy[key]
-
-    return files_to_copy
 
 
 if __name__ == "__main__":
