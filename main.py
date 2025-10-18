@@ -1,5 +1,6 @@
 import pathlib
 import sys
+import shutil
 from get_hashes_from_directory import hash_files_in_directory
 from check_for_duplicates import delete_duplicates
 
@@ -14,6 +15,15 @@ def main():
 
     print(f"\n{len(files_to_copy)} files for copying")
     print_items(files_to_copy)
+
+    proceed_answer = input(f"\nProceed? [y/n]")
+    if proceed_answer in ["Y", "y", "yes"]:
+        for item in files_to_copy:
+            target_file_path = f"{target_directory}/{item.name}"
+            shutil.copy(item, target_file_path)
+        print(f"\n{len(files_to_copy)} files copied to {target_directory}")
+
+    print(f"\nprocess ending")
 
 
 def print_items(dict):
