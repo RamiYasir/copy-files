@@ -1,7 +1,7 @@
 import pathlib
 import sys
-from HashFilesInDirectory import hash_files_in_directory
-from CheckForDuplicates import delete_duplicates
+from get_hashes_from_directory import hash_files_in_directory
+from check_for_duplicates import delete_duplicates
 
 
 def main():
